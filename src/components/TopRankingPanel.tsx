@@ -42,7 +42,7 @@ export default function TopRankingPanel() {
     .sort((a, b) => b.votes - a.votes)
 
   return (
-    <div className="flex flex-col gap-4 w-full max-w-md px-4">
+    <div className="flex flex-col gap-2 w-full max-w-md px-4 py-4">
       {ranked.slice(0, 3).map((c, i) => (
         <div key={c.id} className="flex items-center gap-4 p-4 bg-white rounded-xl shadow hover:scale-[1.02] transition">
           <div className="text-3xl font-bold w-6">{i + 1}</div>

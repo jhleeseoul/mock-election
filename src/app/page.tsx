@@ -5,6 +5,7 @@ import KoreaMap from '@/components/KoreaMap'
 import VoteCard from '@/components/VoteCard'
 import ResultsPanel from '@/components/ResultsPanel'
 import TopRankingPanel from '@/components/TopRankingPanel'
+import ShareButton from '@/components/ShareButton'
 
 const candidates = [
   {
@@ -43,21 +44,24 @@ export default function HomePage() {
         />
       </div>
 
-      {/* 가운데: 순위 + 결과 그래프 */}
-      <div className="w-full md:w-[35%] bg-white flex flex-col items-center justify-start p-4 overflow-y-auto gap-6">
-        <TopRankingPanel />
-        <ResultsPanel selectedRegion={selectedRegion} />
-      </div>
-
-      {/* 오른쪽: 캐릭터 카드 */}
+      {/* 가운데: 캐릭터 카드 */}
       <div className="w-full md:w-[30%] bg-white flex flex-col items-center justify-center gap-6 p-6 overflow-y-auto">
-        <h1 className="text-2xl font-bold text-gray-800">캐릭터 투표</h1>
+        <h1 className="text-2xl font-bol  d text-gray-800">캐릭터 투표</h1>
+        <ShareButton />
         <div className="flex flex-col gap-4 w-full max-w-sm">
           {candidates.map((c) => (
             <VoteCard key={c.id} candidate={c} />
           ))}
         </div>
       </div>
+
+      {/* 오른쪽: 순위 + 결과 그래프 */}
+      <div className="w-full md:w-[35%] bg-white flex flex-col items-center justify-start p-4 overflow-y-auto gap-6">
+        <TopRankingPanel />
+        <ResultsPanel selectedRegion={selectedRegion} />
+      </div>
+
+      
     </div>
   )
 }
