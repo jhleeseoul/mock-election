@@ -24,7 +24,7 @@ type VoteModalProps = {
 export default function VoteModal({ open, onClose, candidate, onVoteSuccess }: VoteModalProps) {
   const [age, setAge] = useState('10대')
   const [gender, setGender] = useState('여성')
-  const [region, setRegion] = useState('서울')
+  const [region, setRegion] = useState('서울특별시')
 
   const handleSubmit = async () => {
     await submitVoteToFirestore(region, candidate.id, age)

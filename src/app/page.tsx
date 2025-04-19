@@ -5,8 +5,6 @@ import KoreaMap from '@/components/KoreaMap'
 import VoteCard from '@/components/VoteCard'
 import ResultsPanel from '@/components/ResultsPanel'
 import TopRankingPanel from '@/components/TopRankingPanel'
-import TopCharacters from '@/components/TopCharacters'
-import { useTopCharacters } from '@/hooks/useTopCharacters'
 
 const candidates = [
   {
@@ -45,16 +43,14 @@ export default function HomePage() {
         />
       </div>
 
-      {/* 가운데: 결과 시각화 */}
-      <div className="w-full md:w-[30%] bg-white flex items-center justify-center p-4 overflow-y-auto">
+      {/* 가운데: 순위 + 결과 그래프 */}
+      <div className="w-full md:w-[35%] bg-white flex flex-col items-center justify-start p-4 overflow-y-auto gap-6">
+        <TopRankingPanel />
         <ResultsPanel selectedRegion={selectedRegion} />
       </div>
 
-      <TopRankingPanel />
-      
-
       {/* 오른쪽: 캐릭터 카드 */}
-      <div className="w-full md:w-[35%] bg-white flex flex-col items-center justify-center gap-6 p-6">
+      <div className="w-full md:w-[30%] bg-white flex flex-col items-center justify-center gap-6 p-6 overflow-y-auto">
         <h1 className="text-2xl font-bold text-gray-800">캐릭터 투표</h1>
         <div className="flex flex-col gap-4 w-full max-w-sm">
           {candidates.map((c) => (

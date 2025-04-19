@@ -116,17 +116,21 @@ export default function ResultsPanel({ selectedRegion }: Props) {
 
   return (
     <div className="flex flex-col items-center gap-6 w-full">
-      <div className="w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-2 text-gray-800">전체 백분위</h2>
+         {/* 전체 백분위 차트를 렌더링 <div className="w-full max-w-md">
+        <h2 className="text-`2xl font-bold text-center mb-2 text-gray-800">전체 백분위</h2>
         <Bar data={makeChartData(totalVotes)} options={options} />
-      </div>
-
-      {selectedRegion && selectedVotes && (
-        <div className="w-full max-w-md">
-          <h2 className="text-2xl font-bold text-center mt-6 mb-2 text-gray-800">{selectedRegion} 지역 백분위</h2>
-          <Bar data={makeChartData(aggregateVotes(selectedVotes))} options={options} />
-        </div>
-      )}
+      </div> */}
+       <div className="w-full max-w-md">
+      <h2 className="text-2xl font-bold text-center mt-1 mb-2 text-gray-800">
+        {(selectedRegion || '경기도')} 백분위
+      </h2>
+      <Bar
+        data={makeChartData(
+          aggregateVotes(allVotes[selectedRegion || '경기도'] || {})
+        )}
+        options={options}
+      />
+    </div>
     </div>
   )
 }
