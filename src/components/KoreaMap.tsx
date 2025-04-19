@@ -40,7 +40,6 @@ export default function KoreaMap({ selectedRegion, setSelectedRegion }: KoreaMap
               const topId = regionColors[name] // ✅ 득표 1위 후보 ID
               const fillColor =
                 candidateColors[topId] || '#DDD' // ✅ 색상 결정
-                  console.log('name:', name, 'topId:', topId, 'fillColor:', fillColor)
               const rates = voteRates[name] || {} // ✅ 지역별 투표 비율
               const tooltipContent = rates
                 ? `${name}\n${Object.entries(rates)
