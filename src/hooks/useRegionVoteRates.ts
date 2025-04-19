@@ -31,7 +31,7 @@ export function useRegionVoteRates(): VoteRates {
           regionRates[candidate] = percent
         }
 
-        result[region] = regionRates
+        result[doc.id] = regionRates
       })
 
       setRates(result)

@@ -35,9 +35,9 @@ export default function HomePage() {
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null)
 
   return (
-    <div className="flex flex-col md:flex-row w-screen h-screen overflow-hidden font-sans">
+    <div className="flex flex-col md:flex-row w-screen min-h-screen font-sans">
       {/* 왼쪽: 지도 */}
-      <div className="w-full md:w-[35%] bg-white flex items-center justify-center">
+      <div className="w-full md:w-[35%] p-4 bg-white flex items-center justify-center">
         <KoreaMap
           selectedRegion={selectedRegion}
           setSelectedRegion={setSelectedRegion}
@@ -45,8 +45,8 @@ export default function HomePage() {
       </div>
 
       {/* 가운데: 캐릭터 카드 */}
-      <div className="w-full md:w-[30%] bg-white flex flex-col items-center justify-center gap-6 p-6 overflow-y-auto">
-        <h1 className="text-2xl font-bol  d text-gray-800">캐릭터 투표</h1>
+      <div className="w-full md:w-[30%] p-6 bg-white flex flex-col items-center justify-start gap-6">
+        <h1 className="text-2xl font-bold text-gray-800">캐릭터 투표</h1>
         <ShareButton />
         <div className="flex flex-col gap-4 w-full max-w-sm">
           {candidates.map((c) => (
@@ -56,7 +56,7 @@ export default function HomePage() {
       </div>
 
       {/* 오른쪽: 순위 + 결과 그래프 */}
-      <div className="w-full md:w-[35%] bg-white flex flex-col items-center justify-start p-4 overflow-y-auto gap-6">
+      <div className="w-full md:w-[35%] p-4 bg-white flex flex-col gap-6 items-center justify-start">
         <TopRankingPanel />
         <ResultsPanel selectedRegion={selectedRegion} />
       </div>
