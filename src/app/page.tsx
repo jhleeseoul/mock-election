@@ -4,6 +4,9 @@ import { useState } from 'react'
 import KoreaMap from '@/components/KoreaMap'
 import VoteCard from '@/components/VoteCard'
 import ResultsPanel from '@/components/ResultsPanel'
+import TopRankingPanel from '@/components/TopRankingPanel'
+import TopCharacters from '@/components/TopCharacters'
+import { useTopCharacters } from '@/hooks/useTopCharacters'
 
 const candidates = [
   {
@@ -46,6 +49,9 @@ export default function HomePage() {
       <div className="w-full md:w-[30%] bg-white flex items-center justify-center p-4 overflow-y-auto">
         <ResultsPanel selectedRegion={selectedRegion} />
       </div>
+
+      <TopRankingPanel />
+      
 
       {/* 오른쪽: 캐릭터 카드 */}
       <div className="w-full md:w-[35%] bg-white flex flex-col items-center justify-center gap-6 p-6">
