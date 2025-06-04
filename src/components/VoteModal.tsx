@@ -2,9 +2,8 @@
 'use client'
 
 import { Dialog } from '@headlessui/react'
-import { useState, Fragment } from 'react'
+import { useState } from 'react'
 import { submitVoteToFirestore } from '@/lib/submitVoteToFirestore'
-import { on } from 'events'
 
 type Candidate = {
   id: string
