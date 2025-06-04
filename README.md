@@ -51,9 +51,7 @@ mock-election/
 │  ├─ components/         # 재사용 컴포넌트 (지도, 카드, 모달 등)
 │  ├─ lib/                # Firebase 로직 (submitVote, vote fetch 등)
 │  ├─ hooks/              # custom hooks (지역별 색상 구하기 등)
-│  ├─ firebase/           # Firebase 초기화
-│  ├─ styles/             # Tailwind globals
-│  └─ types/              # 공용 타입 정의 (선택)
+│  └─ firebase/           # Firebase 초기화
 ```
 
 ---
