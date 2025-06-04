@@ -1,4 +1,9 @@
 # 🗳️ Mock Election - 캐릭터 인기 투표 웹앱
+> 지역별 투표 결과를 실시간으로 확인 가능한 투표 포맷
+> 🎮 배포 주소: [votemypresident.kro.kr](https://votemypresident.kro.kr)
+
+---
+
 
 이 프로젝트는 **Sanrio 캐릭터 총선거** 스타일의 UX를 참고하여 만든,  
 **실시간 인기 투표 웹 애플리케이션**입니다.  
